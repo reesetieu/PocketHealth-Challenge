@@ -1,0 +1,35 @@
+<div>
+  <!-- Header -->
+  <div class="modal-header modal-logo-header">
+    <img src="assets/logos/ph-logo.svg" alt="" class="ph-logo">
+  </div>
+
+  <!-- Content -->
+  <div class="form-container">
+    <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
+      <!-- Input Fields -->
+      <div class="input-row">
+        <label for="name">Name</label>
+        <!--Added required tags to name and email-->
+        <input ngModel type="text" name="name" class="input-field" placeholder="Name" required [autofocus]>
+      </div>
+      <div class="input-row">
+        <label for="email">Email</label>
+        <input ngModel name="email" type="email" class="input-field" placeholder="Email" required>
+      </div>
+      <!--Added input for favourite colour-->
+      <div class="input-row">
+        <label for="colour">Favourite Colour (e.g 'red', 'green', or default as white)</label>
+        <input ngModel name="colour" type="text" class="input-field" placeholder="Favourite Colour " required>
+      </div>
+
+      <!-- Button -->
+      <div class="button-row">
+        <!--Updated to be disabled if invalid-->
+        <button class="btn primary-btn" type="submit" [disabled] = "form.invalid">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
